@@ -1,18 +1,23 @@
+const setSize = (container, camera, renderer) => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+};
+
 export class Resizer {
+  constructor(container, camera, renderer) {
+    // set initial size on load
+    setSize(container, camera, renderer);
 
-    constructor(container, camera, renderer) {
-
-      window.addEventListener( 'resize', onWindowResize );
-
-      // Note: hacky closure, but it works a treat
-      function onWindowResize() {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize( container.clientWidth, container.clientHeight );
-        renderer.setPixelRatio(window.devicePixelRatio);
-      }
-
-    }
-
+    window.addEventListener('resize', () => {
+      // set the size again if a resize occurs
+      setSize(container, camera, renderer);
+      // perform any custom actions
+      this.onResize();
+    });
   }
+
+  onResize() {}
+}

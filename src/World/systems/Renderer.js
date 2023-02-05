@@ -3,7 +3,7 @@ import { WebGLRenderer } from "three";
 export class Renderer extends WebGLRenderer {
 
     constructor() {
-        super();
+        super({ antialias: true });
         this.antialias = true;
         this.setPixelRatio( window.devicePixelRatio );
         this.setSize( window.innerWidth, window.innerHeight );
