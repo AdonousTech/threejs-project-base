@@ -11,8 +11,6 @@ export class Controls extends OrbitControls {
         this.maxDistance = 500;
 
         this.maxPolarAngle = Math.PI / 2;
-
-        console.log(`Constructed Controls ${this}`)
     }
 
     createControls() {

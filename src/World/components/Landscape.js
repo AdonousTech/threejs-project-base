@@ -4,7 +4,6 @@ export class Landscape {
 
 
     createGreyBoxLandscape(scene) {
-        console.log('Calling create greybox landscape', scene)
         const geometry = new CylinderGeometry( 0, 10, 30, 4, 1 );
         const material = new MeshStandardMaterial( { color: 0xffffff, flatShading: true } );
 

@@ -4,7 +4,6 @@ export class Camera extends PerspectiveCamera {
 
     constructor() {
         super();
-        console.log('constructed perspective camera', this);
         this.fov = 60;
         this.aspect = window.innerWidth / window.innerHeight;
         this.near = 1;

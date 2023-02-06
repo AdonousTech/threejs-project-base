@@ -8,7 +8,6 @@ let renderer;
 let PC;
 
 function main() {
-  console.log('Called main');
   // Get a reference to the container element
   const container = document.querySelector('#scene-container');
 
